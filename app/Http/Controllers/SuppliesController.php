@@ -33,7 +33,7 @@ class SuppliesController extends Controller
         $supply_obj =new Supply;
         $supply_obj ->title         =request()->title;
         $supply_obj ->photo            =$supply_photo_original_name;
-        //$supply_obj ->created_by       =Auth::user()->id;
+        $supply_obj ->created_by       =Auth::user()->id;
         $supply_obj ->save();
         return redirect()->back()->with('msg', 'You have successfully created SUpply');
     }

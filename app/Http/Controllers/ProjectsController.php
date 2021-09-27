@@ -45,7 +45,7 @@ class ProjectsController extends Controller
         $project_obj ->organization  =request()->organization;
         $project_obj ->item          =request()->item;
         $project_obj ->photo         =$project_photo_original_name;
-        //$project_obj ->created_by    =Auth::user()->id;
+        $project_obj ->created_by    =Auth::user()->id;
         $project_obj ->save();
         return redirect()->back()->with('msg', 'You have successfully created project');
     }

@@ -42,9 +42,9 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-mail bg-primary ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-primary">8.62k</span> Subscribers</h4>
-                                        <p class="mb-3">Your main list is growing</p>
-                                        <button class="btn btn-primary btn-sm btn-round">Manage List</button>
+                                        <h4 class="mt-2"><span class="text-primary">{{$count_projects}}</span> Projects</h4>
+                                        <p class="mb-3">Current Projects</p>
+                                        <a href="/project" button class="btn btn-primary btn-sm btn-round">View</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -52,9 +52,9 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-twitter bg-success ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-success">+40</span> Followers</h4>
-                                        <p class="mb-3">Your main list is growing</p>
-                                        <button class="btn btn-success btn-sm btn-round">Check them out</button>
+                                        <h4 class="mt-2"><span class="text-success">{{$count_comments}}</span> Comments</h4>
+                                        <p class="mb-3">Customers Comments</p>
+                                        <a href="/get-comments" button class="btn btn-success btn-sm btn-round">Check them out</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -62,9 +62,9 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-briefcase bg-danger ui-rounded-icon"></i>
-                                        <h4 class="mt-2">Business Plan</h4>
-                                        <p class="mb-3">your current active plan</p>
-                                        <button class="btn btn-danger btn-sm btn-round">Upgrade to VIP</button>
+                                        <h4 class="mt-2"><span class="text-info">{{$get_materials}}</span> Materials</h4>
+                                        <p class="mb-3">Mumbers of materials</p>
+                                        <a href="/get-material" button class="btn btn-danger btn-sm btn-round">View</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -72,9 +72,9 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-shopping-cart bg-warning ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-warning">10%</span> New Orders</h4>
-                                        <p class="mb-3">your panding order</p>
-                                        <button class="btn btn-warning btn-sm btn-round text-white">Update Now</button>
+                                        <h4 class="mt-2"><span class="text-warning">{{$get_messages}}</span> Contacts</h4>
+                                        <p class="mb-3">Messages Received</p>
+                                        <a href="/contact-messages" button class="btn btn-warning btn-sm btn-round text-white">View</button></a>
                                     </div>
                                 </div>
                             </div>

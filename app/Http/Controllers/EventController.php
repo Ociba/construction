@@ -25,7 +25,7 @@ class EventController extends Controller
         $event_obj ->title         =request()->title;
         $event_obj ->start_time    =request()->start_time;
         $event_obj ->end_time      =request()->end_time;
-        //$event_obj ->created_by       =Auth::user()->id;
+        $event_obj ->created_by       =Auth::user()->id;
         $event_obj ->save();
         return redirect()->back()->with('msg', 'You have successfully created event');
     }

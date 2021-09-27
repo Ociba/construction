@@ -1,7 +1,7 @@
 <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-dark container-p-x" id="layout-navbar">
     <a href="index.html" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
         <span class="app-brand-logo demo">
-            <img src="{{ asset('admin/assets/img/logo-dark.png')}}" alt="Brand Logo" class="img-fluid">
+            <img style="border-radius:50%; width:40px; height:40px;" src="{{ asset('img/llogo.jpg')}}" alt="Brand Logo" class="img-fluid">
         </span>
         <span class="app-brand-text demo font-weight-normal ml-2">COGE</span>
     </a>
@@ -156,12 +156,13 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="javascript:" class="dropdown-item">
+                    {{--<a href="javascript:" class="dropdown-item">
                         <i class="feather icon-user text-muted"></i> &nbsp; My profile</a>
                     <a href="javascript:" class="dropdown-item">
                         <i class="feather icon-mail text-muted"></i> &nbsp; Messages</a>
                     <a href="javascript:" class="dropdown-item">
                         <i class="feather icon-settings text-muted"></i> &nbsp; Account settings</a>
+                        --}}
                     <div class="dropdown-divider"></div>
                     <a href="/logout" class="dropdown-item">
                         <i class="feather icon-power text-danger"></i> &nbsp; Log Out</a>

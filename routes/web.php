@@ -54,6 +54,8 @@ Route::get('/materials', function (){ return view('pages.materials');});
 Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('admin.dashboard');
 })->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+Route::get('/home',[HomeController::Class,'getDashboard'])->name('dashboard');
 Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
 Route::get('/registered-users',[AuthenticationController::Class, 'getUsers'])->name('Registered Users');
 Route::post('/create-user',[AuthenticationController::Class, 'validateUser']);
@@ -106,3 +108,4 @@ Route::get('/delete-event/{id}',[EventController::Class, 'deleteEvent']);
 Route::get('/get-material',[MaterialsController::Class, 'getMaterial'])->name('Materials');
 Route::get('/create-material',[MaterialsController::Class, 'validateMaterial']);
 Route::get('/delete-material/{id}',[MaterialsController::Class, 'deleteMaterial']);
+});

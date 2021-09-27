@@ -35,7 +35,7 @@ class ServicesController extends Controller
         $service_obj ->about_service =request()->about_service;
         $service_obj ->how_to_apply  =request()->how_to_apply;
         $service_obj ->photo         =$service_photo_original_name;
-        //$service_obj ->created_by    =Auth::user()->id;
+        $service_obj ->created_by    =Auth::user()->id;
         $service_obj ->save();
         return redirect()->back()->with('msg', 'You have successfully created service');
     }

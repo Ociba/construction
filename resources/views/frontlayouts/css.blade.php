@@ -1,4 +1,4 @@
-<title>COGE Construction Company Limited</title>
+<title>Coge Construction Company Limited</title>
 <link rel="icon" type="image/x-icon" href="{{ asset('img/llogo.jpg')}}">
 <link rel='stylesheet' id='wp-block-library-css'  href="{{asset('css/style.mince52.css')}}" type='text/css' media='all' />
 <link rel='stylesheet' id='wp-block-library-css'  href="{{asset('css/button.mince52.css')}}" type='text/css' media='all' />

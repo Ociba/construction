@@ -33,8 +33,8 @@
             }
         </style>
         @include('frontlayouts.css')
-        <meta name="tec-api-version" content="v1">
-        <meta name="tec-api-origin" content="https://demo.themeegg.com/themes/education-master">
+        <meta name="tec-api-version" content="">
+        <meta name="tec-api-origin" content="">
         <link rel="https://theeventscalendar.com/" href="../wp-json/tribe/events/v1/index.html" />
         <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     </head>
@@ -54,7 +54,7 @@
                                 <header class="entry-header">
                                     <h1 class="entry-title">Hello Client!</h1>
                                     <div class="post-cats-list">
-                                       cogoconstructioncompanyult@yahoo.com | +256 773 207459 | +256 754 155264
+                                       cogeconstructioncompanyult@yahoo.com | +256 773 207459 | +256 754 155264
                                     </div>
                                 </header>
                                 <!-- .entry-header -->
@@ -94,14 +94,7 @@
                     <!-- #primary -->
                     <aside id="secondary" class="widget-area" role="complementary">
                         @include('frontlayouts.posts')
-                        <section id="recent-comments-2" class="widget widget_recent_comments">
-                            <h4 class="widget-title">Recent Comments</h4>
-                            <ul id="recentcomments">
-                                <li class="recentcomments"><span class="comment-author-link"><a href='https://wordpress.org/' rel='external nofollow' class='url'>A WordPress Commenter</a></span> on <a href="index.html#comment-1">Hello world!</a></li>
-                            </ul>
-                        </section>
-                        <section id="archives-2" class="widget widget_archive">	
-                        </section>
+                        @include('frontlayouts.archieve')
                         @include('frontlayouts.categories')
                     </aside>
                     <!-- #secondary -->

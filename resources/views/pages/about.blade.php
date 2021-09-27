@@ -33,8 +33,8 @@
             }
         </style>
         @include('frontlayouts.css')
-        <meta name="tec-api-version" content="v1">
-        <meta name="tec-api-origin" content="https://demo.themeegg.com/themes/education-master">
+        <meta name="tec-api-version" content="">
+        <meta name="tec-api-origin" content="">
         <link rel="https://theeventscalendar.com/" href="../wp-json/tribe/events/v1/index.html" />
         <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     </head>
@@ -57,7 +57,7 @@
                                         </div>
                                         <!-- .edm-article-thumb -->
                                         <header class="entry-header">
-                                            <h2 class="entry-title"><a href="../entrance-preparation-tips/index.html" rel="bookmark">COGO  Construction Company (U) Limited</a></h2>
+                                            <h2 class="entry-title"><a href="#" rel="bookmark">Coge  Construction Company (U) Limited</a></h2>
                                         </header>
                                         <!-- .entry-header -->
                                         <div class="entry-content" style="text-align: justify;">

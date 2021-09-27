@@ -33,8 +33,8 @@
             }
         </style>
         @include('frontlayouts.css')
-        <meta name="tec-api-version" content="v1">
-        <meta name="tec-api-origin" content="https://demo.themeegg.com/themes/education-master">
+        <meta name="tec-api-version" content="">
+        <meta name="tec-api-origin" content="">
         <link rel="https://theeventscalendar.com/" href="../wp-json/tribe/events/v1/index.html" />
         <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     </head>
@@ -75,7 +75,7 @@
                                 <div class="edm-related-posts-wrap edm-clearfix">
                                     <div class="edm-single-post edm-clearfix">
                                         <div class="edm-post-thumb">
-                                            <a href="../entrance-preparation-tips/index.html">
+                                            <a href="#">
                                             <img width="305"style="height:140px;" src="{{asset('img/land.jpg')}}" class="attachment-education-master-block-medium size-education-master-block-medium wp-post-image" alt="" sizes="(max-width: 305px) 100vw, 305px" />						</a>
                                         </div>
                                         <!-- .edm-post-thumb -->
@@ -90,7 +90,7 @@
                                     <!-- .edm-single-post -->
                                     <div class="edm-single-post edm-clearfix">
                                         <div class="edm-post-thumb">
-                                            <a href="../sample-post-with-threaded-comments/index.html">
+                                            <a href="#">
                                             <img width="305" style="height:140px;" src="{{asset('img/land3.jpg')}}" class="attachment-education-master-block-medium size-education-master-block-medium wp-post-image" alt="" sizes="(max-width: 305px) 100vw, 305px" />						</a>
                                         </div>
                                         <!-- .edm-post-thumb -->
@@ -105,7 +105,7 @@
                                     <!-- .edm-single-post -->
                                     <div class="edm-single-post edm-clearfix">
                                         <div class="edm-post-thumb">
-                                            <a href="../computer-engineering/index.html">
+                                            <a href="#">
                                             <img width="305" style="height:140px;" src="{{asset('img/land1.jpg')}}" class="attachment-education-master-block-medium size-education-master-block-medium wp-post-image" alt="" sizes="(max-width: 305px) 100vw, 305px" />	</a>
                                         </div>
                                         <!-- .edm-post-thumb -->

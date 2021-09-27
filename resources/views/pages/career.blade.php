@@ -32,8 +32,8 @@
             }
         </style>
         @include('frontlayouts.css')
-        <meta name="tec-api-version" content="v1">
-        <meta name="tec-api-origin" content="https://demo.themeegg.com/themes/education-master">
+        <meta name="tec-api-version" content="">
+        <meta name="tec-api-origin" content="">
         <link rel="https://theeventscalendar.com/" href="../wp-json/tribe/events/v1/index.html" />
         <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
     </head>

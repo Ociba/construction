@@ -14,7 +14,7 @@
     <ul class="sidenav-inner py-1">
 
         <!-- Dashboards -->
-        <li class="sidenav-item active open">
+        <li class="sidenav-item open" @if(\Request::route()->getName() == "Dashboard")class="active" @endif>
             <a href="/home" class="sidenav-link sidenav-toggl">
                 <i class="sidenav-icon feather icon-home"></i>
                 <div>Dashboards</div>
@@ -29,7 +29,7 @@
             </ul>--}}
         </li>
         <li class="sidenav-item">
-            <a href="/service" class="sidenav-link">
+            <a href="/service" class="sidenav-link"  @if(\Request::route()->getName() == "Services")class="active" @endif>
                 <i class="sidenav-icon feather icon-layers"></i>
                 <div>Services</div>
             </a>

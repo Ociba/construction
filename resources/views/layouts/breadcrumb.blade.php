@@ -3,6 +3,6 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
         <li class="breadcrumb-item"><a href="#!">Admin</a></li>
-        <li class="breadcrumb-item active"><a href="#!">{{ request()->route()->getName() }}</a></li>
+        <li class="breadcrumb-item active">{{ \Request()->route()->getName() }}</li>
     </ol>
 </div>

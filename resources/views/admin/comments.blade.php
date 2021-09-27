@@ -72,7 +72,7 @@
                                                         <td>{{$comments->location}}</td>
                                                         <td>
                                                         @if($comments->status == 'pending')
-                                                        <a href="/validate-comment/{{$comments->id}}" button class="btn btn-primary">Mark as Active</button></a>
+                                                        <a href="/validate-comment/{{$comments->id}}" button class="btn btn-success">Mark as Active</button></a>
                                                         @else
                                                         <button class="btn btn-info">Active</button>
                                                         @endif
