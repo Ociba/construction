@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{--<x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -45,4 +45,134 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-guest-layout>--}}
+
+<!DOCTYPE html>
+
+<html lang="en" class="default-style layout-fixed layout-navbar-fixed">
+
+
+
+<head>
+    <title>Coge | Construction Company Ltd</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Codedthemes" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/llogo.jpg')}}">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- Icon fonts -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/ionicons.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/linearicons.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/open-iconic.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/pe-icon-7-stroke.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/fonts/feather.css')}}">
+
+    <!-- Core stylesheets -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-material.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/shreerang-material.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/uikit.css')}}">
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/libs/perfect-scrollbar/perfect-scrollbar.css')}}">
+    <!-- Page -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/pages/authentication.css')}}">
+</head>
+
+<body>
+    <!-- [ Preloader ] Start -->
+    <div class="page-loader">
+        <div class="bg-primary"></div>
+    </div>
+    <!-- [ Preloader ] End -->
+
+    <!-- [ Content ] Start -->
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('admin/assets/img/bg/21.jpg');">
+        <div class="ui-bg-overlay bg-dark opacity-25"></div>
+
+        <div class="authentication-inner py-5">
+
+            <div class="card">
+                <div class="p-4 p-sm-5">
+                @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                    <!-- [ Logo ] Start -->
+                    <div class="d-flex justify-content-center align-items-center pb-2 mb-4">
+                        <div class="ui-w-60">
+                            <div class="w-100 position-relative">
+                                <img src="{{ asset('img/llogo.jpg')}}" alt="Brand Logo" class="img-fluid">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ Logo ] End -->
+
+                    <h5 class="text-center text-muted font-weight-normal mb-4">Login to Your Account</h5>
+
+                    <!-- Form -->
+                    <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label d-flex justify-content-between align-items-end">
+                                <span>Password</span>
+                                @if (Route::has('password.request'))
+                                <a href="{{ route('password.request') }}" class="d-block small">Forgot password?</a>
+                                @endif
+                            </label>
+                            <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center m-0">
+                            <label class="custom-control custom-checkbox m-0">
+                                <input type="checkbox" id="remember_me" name="remember" class="custom-control-input">
+                                <span class="custom-control-label">Remember me</span>
+                            </label>
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                    <!-- [ Form ] End -->
+
+                </div>
+                <div class="card-footer py-3 px-4 px-sm-5">
+                    <div class="text-center text-muted">
+                       Work Efficiency is our Result
+                        {{--<a href="{{ route('login') }}">Sign Up</a>--}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- / Content -->
+
+    <!-- Core scripts -->
+    <script src="{{ asset('admin/assets/js/pace.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('admin/assets/libs/popper/popper.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/bootstrap.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/sidenav.js')}}"></script>
+    <script src="{{ asset('admin/assets/js/material-ripple.js')}}"></script>
+
+    <!-- Libs -->
+    <script src="{{ asset('admin/assets/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+
+    <!-- Demo -->
+    <script src="{{ asset('admin/assets/js/demo.js')}}"></script><script src="{{ asset('admin/assets/js/analytics.js')}}"></script>
+
+</body>
+</html>

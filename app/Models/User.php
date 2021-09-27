@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use DB;
 
 class User extends Authenticatable
 {
@@ -58,4 +59,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function getLoggedInUserLogo(){
+        $user_logo = DB::table('users')->where('id', '=', $this->id)->value('profile_photo_path');
+        if(empty($user_logo)){
+            $user_logo = 'logo.png';
+        }
+        return $user_logo;
+    }
 }

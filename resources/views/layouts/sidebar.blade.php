@@ -1,7 +1,7 @@
 <div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
     <div class="app-brand demo">
         <span class="app-brand-logo demo">
-            <img src="{{ asset('admin/assets/img/logo.png')}}" alt="Brand Logo" class="img-fluid">
+            <img style="border-radius:50%; width:50px; height:50px;" src="{{ asset('img/llogo.jpg')}}" alt="Brand Logo" class="img-fluid">
         </span>
         <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">COGE</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
@@ -80,6 +80,12 @@
             <a href="/get-material" class="sidenav-link">
                 <i class="sidenav-icon feather icon-pie-chart"></i>
                 <div>Material</div>
+            </a>
+        </li>
+        <li class="sidenav-item">
+            <a href="/registered-users" class="sidenav-link">
+                <i class="sidenav-icon feather icon-lock"></i>
+                <div>Register Members</div>
             </a>
         </li>
     </ul>

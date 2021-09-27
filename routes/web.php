@@ -55,7 +55,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('admin.dashboard');
 })->name('dashboard');
 Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
+Route::get('/registered-users',[AuthenticationController::Class, 'getUsers'])->name('Registered Users');
+Route::post('/create-user',[AuthenticationController::Class, 'validateUser']);
+Route::get('/delete-user/{id}',[AuthenticationController::Class, 'deleteUser']);
 Route::get('service',[ServicesController::Class, 'getServices'])->name('Services');
+Route::get('/register',function(){ return redirect('/login');});
 Route::post('/create-service',[ServicesController::Class,'validateService']);
 Route::get('/edit-service/{id}',[ServicesController::Class, 'editService'])->name('Edit Service Form');
 Route::get('/update-service/{id}',[ServicesController::Class, 'updateService']);
