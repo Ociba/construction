@@ -72,7 +72,7 @@
                                                         </td>
                                                         <td>{{$branch->location}}</td>
                                                         <td>{{$branch->address}}</td>
-                                                        <td>{{$branch->photo}}</td>
+                                                        <td><img style="width:50px; height:50px;" src="{{ asset('branch_photos/'.$branch->photo)}}"></td>
                                                         <td>{{$branch->email}}</td>
                                                         <td>{{$branch->contact1}}</td>
                                                         <td>{{$branch->contact2}}</td>

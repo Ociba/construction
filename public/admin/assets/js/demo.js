@@ -50,7 +50,7 @@ $(function() {
         '</div>' +
         '<div class="ui-block">' +
         '<div class="style-head">' +
-        '<h5 class="m-0">Empire Admin Live UI Personalize</h5>' +
+        '<h5 class="m-0">Coge Admin Live UI Personalize</h5>' +
         '</div>' +
         '<div class="style-body">' +
         '<div class="scroll-div mst-scroll">' +

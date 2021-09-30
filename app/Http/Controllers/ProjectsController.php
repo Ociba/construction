@@ -13,7 +13,7 @@ class ProjectsController extends Controller
      * This function gets the project after login
     */
     protected function getProjects(){
-        $get_projects =DB::table('projects')->get();
+        $get_projects =DB::table('projects')->whereNull('amount')->get();
         return view('admin.projects', compact('get_projects'));
     }
     /** 

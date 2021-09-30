@@ -38,55 +38,23 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="bg-primary text-center text-white font-weight-bold p-3">
-                        4 New Notifications
+                        {{auth()->user()->countComments()}} New Notifications
                     </div>
                     <div class="list-group list-group-flush">
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <div class="ui-icon ui-icon-sm feather icon-home bg-secondary border-0 text-white"></div>
+                       @foreach(auth()->user()->getComments() as $comments)  
+                        <a href="/get-comments" class="list-group-item list-group-item-action media d-flex align-items-center">
+                            <div class="ui-icon ui-icon-sm feather icon-user bg-secondary border-0 text-white"></div>
                             <div class="media-body line-height-condenced ml-3">
-                                <div class="text-dark">Login from 192.168.1.1</div>
-                                <div class="text-light small mt-1">
-                                    Aliquam ex eros, imperdiet vulputate hendrerit et.
+                                <div class="text-dark">{{$comments->name}}</div>
+                                <div class="small mt-1">
+                                    {{ substr($comments->comment,0,20)}}....
                                 </div>
-                                <div class="text-light small mt-1">12h ago</div>
+                                <div class="text-success small mt-1">{{ date('d F Y', strtotime($comments->created_at)) }} {{ date('g:ia', strtotime($comments->created_at))}}</div>
                             </div>
                         </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <div class="ui-icon ui-icon-sm feather icon-user-plus bg-info border-0 text-white"></div>
-                            <div class="media-body line-height-condenced ml-3">
-                                <div class="text-dark">You have
-                                    <strong>4</strong> new followers</div>
-                                <div class="text-light small mt-1">
-                                    Phasellus nunc nisl, posuere cursus pretium nec, dictum vehicula tellus.
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <div class="ui-icon ui-icon-sm feather icon-power bg-danger border-0 text-white"></div>
-                            <div class="media-body line-height-condenced ml-3">
-                                <div class="text-dark">Server restarted</div>
-                                <div class="text-light small mt-1">
-                                    19h ago
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <div class="ui-icon ui-icon-sm feather icon-alert-triangle bg-warning border-0 text-dark"></div>
-                            <div class="media-body line-height-condenced ml-3">
-                                <div class="text-dark">99% server load</div>
-                                <div class="text-light small mt-1">
-                                    Etiam nec fringilla magna. Donec mi metus.
-                                </div>
-                                <div class="text-light small mt-1">
-                                    20h ago
-                                </div>
-                            </div>
-                        </a>
+                        @endforeach
                     </div>
-                    <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all notifications</a>
+                    <a href="/get-comments" class="d-block text-center text-light small p-2 my-1">Show all notifications</a>
                 </div>
             </div>
 
@@ -98,51 +66,23 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="bg-primary text-center text-white font-weight-bold p-3">
-                        4 New Messages
+                        {{auth()->user()->countMessages()}} New Messages
                     </div>
                     <div class="list-group list-group-flush">
+                      @foreach(auth()->user()->getMessages() as $contacts) 
                         <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <img src="{{ asset('admin/assets/img/avatars/6-small.png')}}" class="d-block ui-w-40 rounded-circle" alt>
+                        <div class="ui-icon ui-icon-sm feather icon-user bg-secondary border-0 text-white"></div>
                             <div class="media-body ml-3">
-                                <div class="text-dark line-height-condenced">Lorem ipsum dolor consectetuer elit.</div>
+                                <div class="text-dark line-height-condenced">{{ substr($contacts->message,0,20)}}....</div>
                                 <div class="text-light small mt-1">
-                                    Josephin Doe &nbsp;·&nbsp; 58m ago
+                                <span style="color:blue;">{{$contacts ->name}}</span> &nbsp;·&nbsp; <span style="color:green;">{{ date('d F Y', strtotime($comments->created_at)) }} | {{Carbon\Carbon::parse($comments->created_at)->diffForHumans()}}</span>
                                 </div>
                             </div>
                         </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <img src="{{ asset('admin/assets/img/avatars/4-small.png')}}" class="d-block ui-w-40 rounded-circle" alt>
-                            <div class="media-body ml-3">
-                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet, consectetuer.</div>
-                                <div class="text-light small mt-1">
-                                    Lary Doe &nbsp;·&nbsp; 1h ago
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <img src="{{ asset('admin/assets/img/avatars/5-small.png')}}" class="d-block ui-w-40 rounded-circle" alt>
-                            <div class="media-body ml-3">
-                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet elit.</div>
-                                <div class="text-light small mt-1">
-                                    Alice &nbsp;·&nbsp; 2h ago
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="javascript:" class="list-group-item list-group-item-action media d-flex align-items-center">
-                            <img src="{{ asset('admin/assets/img/avatars/11-small.png')}}" class="d-block ui-w-40 rounded-circle" alt>
-                            <div class="media-body ml-3">
-                                <div class="text-dark line-height-condenced">Lorem ipsum dolor sit amet consectetuer amet elit dolor sit.</div>
-                                <div class="text-light small mt-1">
-                                    Suzen &nbsp;·&nbsp; 5h ago
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <a href="javascript:" class="d-block text-center text-light small p-2 my-1">Show all messages</a>
+                        @endforeach
+                     </div>
+                        
+                    <a href="/contact-messages" class="d-block text-center text-light small p-2 my-1">Show all messages</a>
                 </div>
             </div>
 

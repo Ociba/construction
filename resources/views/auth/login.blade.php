@@ -94,8 +94,8 @@
     <!-- [ Preloader ] End -->
 
     <!-- [ Content ] Start -->
-    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('admin/assets/img/bg/21.jpg');">
-        <div class="ui-bg-overlay bg-dark opacity-25"></div>
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('admin/assets/img/bg/soroti5.jpg');">
+        <div class="ui-bg-overlay bg-info opacity-25"></div>
 
         <div class="authentication-inner py-5">
 
@@ -128,12 +128,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label d-flex justify-content-between align-items-end">
-                                <span>Password</span>
-                                @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}" class="d-block small">Forgot password?</a>
-                                @endif
-                            </label>
+                        <label class="form-label">Password</label>
                             <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
                             <div class="clearfix"></div>
                         </div>
@@ -142,15 +137,22 @@
                                 <input type="checkbox" id="remember_me" name="remember" class="custom-control-input">
                                 <span class="custom-control-label">Remember me</span>
                             </label>
-                            <button type="submit" class="btn btn-primary">Sign In</button>
+                            <label class="form-label d-flex justify-content-between align-items-end">
+                                @if (Route::has('password.request'))
+                                <a href="{{ route('password.request') }}" class="d-block small"><span style="color:blue;">Forgot password?</span></a>
+                                @endif
+                            </label> 
                         </div>
+                        <div class="col-xl-12 text-center mt-4">
+                        <button type="submit" class="btn btn-round btn-primary">Sign In</button>
+                    </div>
                     </form>
                     <!-- [ Form ] End -->
 
                 </div>
-                <div class="card-footer py-3 px-4 px-sm-5">
+                <div class="card-footer py-3 px-1 px-sm-5">
                     <div class="text-center text-muted">
-                       Work Efficiency is our Result
+                       <span style="color:#716aca">Work Efficiency is our Result</span>
                         {{--<a href="{{ route('login') }}">Sign Up</a>--}}
                     </div>
                 </div>
@@ -172,7 +174,7 @@
     <script src="{{ asset('admin/assets/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
 
     <!-- Demo -->
-    <script src="{{ asset('admin/assets/js/demo.js')}}"></script><script src="{{ asset('admin/assets/js/analytics.js')}}"></script>
+</script><script src="{{ asset('admin/assets/js/analytics.js')}}"></script>
 
 </body>
 </html>

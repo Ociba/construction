@@ -52,6 +52,13 @@ class ContactsController extends Controller
             return $this->createContactMessage();
         }
     }
+     /** 
+     * This function updates the pending contacts to read
+    */
+    protected function changePendingContactsToActive($contact_id){
+        Contact::where('id', $contact_id)->update(array('status'=>'read'));
+        return redirect()->back()->with('msg','You have marked Pending Contact to Read Successfully');
+    }
     /** 
      * This function deletes the contact permanently
     */

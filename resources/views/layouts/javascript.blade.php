@@ -9,14 +9,11 @@
 <!-- Libs -->
 <script src="{{ asset('admin/assets/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
 <script src="{{ asset('admin/assets/libs/chart-am4/core.js')}}"></script>
-<script src="{{ asset('admin/assets/libs/chart-am4/animated.js')}}"></script>
 <script src="{{ asset('admin/assets/libs/eve/eve.js')}}"></script>
 <script src="{{ asset('admin/assets/libs/flot/flot.js')}}"></script>
 <script src="{{ asset('admin/assets/libs/flot/curvedLines.js')}}"></script>
 <script src="{{ asset('admin/assets/libs/raphael/raphael.js')}}"></script>
-<script src="{{ asset('admin/assets/libs/morris/morris.js')}}"></script>
 
 <!-- Demo -->
 <script src="{{ asset('admin/assets/js/demo.js')}}"></script>
 <script src="{{ asset('admin/assets/js/analytics.js')}}"></script>
-<script src="{{ asset('admin/assets/js/pages/dashboards_analytics.js')}}"></script>

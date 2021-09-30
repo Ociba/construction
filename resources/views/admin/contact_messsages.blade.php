@@ -70,7 +70,12 @@
                                                         <td>{{$messages->name}}</td>
                                                         <td>{{$messages->email}}</td>
                                                         <td>{{$messages->contact}}</td>
-                                                        <td><a href="/delete-contact-message/{{$messages->id}}" button class="btn btn-primary">Delete</button></a>
+                                                        <td>
+                                                            @if($messages->status == 'pending')
+                                                            <a href="/mark-contact-message-as-read/{{$messages->id}}" button class="btn btn-info">Mark As Read</button></a>
+                                                            @endif
+                                                            <a href="/delete-contact-message/{{$messages->id}}" button class="btn btn-primary">Delete</button></a>
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

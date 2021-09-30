@@ -49,12 +49,17 @@ Route::get('/branches', [BranchesController::Class, 'getFrontBranches']);
 Route::get('/services', [ServicesController::Class, 'getFrontServices']);
 Route::get('/post',[BlogController::Class,'getPost']);
 Route::get('/materials', function (){ return view('pages.materials');});
+Route::get('/comment',[ContactsController::Class, 'validateComment']);
 //Route::get('/home', function (){ return view('admin.dashboard');})->name('Dashboard');
 
+Route::get('/create-material',[MaterialsController::Class, 'validateMaterial']);
+Route::get('/send-messages',[ContactsController::Class, 'validateContactMessage']);
+
+
+Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
     return view('admin.dashboard');
 })->name('dashboard');
-Route::middleware(['auth'])->group(function () {
 Route::get('/home',[HomeController::Class,'getDashboard'])->name('dashboard');
 Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
 Route::get('/registered-users',[AuthenticationController::Class, 'getUsers'])->name('Registered Users');
@@ -79,13 +84,12 @@ Route::get('/edit-blog/{id}',[BlogController::Class, 'editBlog'])->name('Edit Bl
 Route::get('/update-blog/{id}',[BlogController::Class, 'updateBlog']);
 Route::get('/delete-blog/{id}', [BlogController::Class, 'deleteBlog']);
 
-Route::get('/send-messages',[ContactsController::Class, 'validateContactMessage']);
 Route::get('/contact-messages',[ContactsController::Class, 'getcontactMessages'])->name('Contact Messages');
 Route::get('/delete-contact-message/{id}',[ContactsController::Class, 'deleteContactMessage']);
-Route::get('/comment',[ContactsController::Class, 'validateComment']);
 Route::get('/get-comments',[ContactsController::Class, 'getComments'])->name('Comments');
 Route::get('delete-comment/{id}',[ContactsController::Class,'deleteComment']);
 Route::get('validate-comment/{id}',[ContactsController::Class, 'changePendingCommentsToActive']);
+Route::get('mark-contact-message-as-read/{id}',[ContactsController::Class,'changePendingContactsToActive']);
 
 Route::get('branch',[BranchesController::Class, 'getBranches'])->name('Company Branches');
 Route::post('/create-branch',[BranchesController::Class, 'validateBranch']);
@@ -106,6 +110,11 @@ Route::get('/update-event/{id}',[EventController::Class, 'updateEvent']);
 Route::get('/delete-event/{id}',[EventController::Class, 'deleteEvent']);
 
 Route::get('/get-material',[MaterialsController::Class, 'getMaterial'])->name('Materials');
-Route::get('/create-material',[MaterialsController::Class, 'validateMaterial']);
 Route::get('/delete-material/{id}',[MaterialsController::Class, 'deleteMaterial']);
+
+
+Route::get('/save-project',[HomeController::Class, 'validateProjects']);
+Route::get('/edit-dashboard-project/{id}',[HomeController::Class, 'editDashboardProject'])->name('Edit Project');
+Route::get('/update-dashboard-project/{id}',[HomeController::Class, 'updateDashboardProject']);
+Route::get('/delete-dashboard-project/{id}', [HomeController::Class, 'deleteDashboardProject']);
 });

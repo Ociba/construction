@@ -68,4 +68,32 @@ class User extends Authenticatable
         }
         return $user_logo;
     }
+    /** 
+     * This function counts comments
+    */
+    public function countComments(){
+        $count_comments =DB::table('comments')->where('status','pending')->count();
+        return $count_comments;
+    }
+    /** 
+     * This function gets comments
+    */
+    public function getComments(){
+        $get_comments =DB::table('comments')->where('status','pending')->take(4)->get();
+        return collect($get_comments);
+    }
+      /** 
+     * This function counts messages
+    */
+    public function countMessages(){
+        $count_contacts =DB::table('contacts')->where('status','pending')->count();
+        return $count_contacts;
+    }
+    /** 
+     * This function gets messages
+    */
+    public function getMessages(){
+        $get_contacts =DB::table('contacts')->where('status','pending')->take(4)->get();
+        return collect($get_contacts);
+    }
 }

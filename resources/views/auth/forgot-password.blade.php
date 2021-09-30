@@ -76,7 +76,7 @@
     <!-- [ Preloader ] End -->
 
     <!-- [ content ] Start -->
-    <div class="authentication-wrapper authentication-2 px-4">
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('admin/assets/img/bg/21.jpg');">
         <div class="authentication-inner py-5">
             @if (session('status'))
                 <div class="mb-4 font-medium text-sm text-green-600">
@@ -104,7 +104,7 @@
                         <input type="email" id="email" class="form-control" placeholder="Enter your email address" name="email" :value="old('email')" required autofocus>
                         <div class="clearfix"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Send password reset email</button>
+                    <button type="submit" class="btn btn-round btn-primary btn-block">Send password reset email</button>
                 </div>
             </form>
             <!-- [ Form ] End -->

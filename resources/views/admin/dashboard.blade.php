@@ -11,7 +11,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="" />
    @include('layouts.styling')
-
+   <link rel="stylesheet" href="{{ asset('admin/assets/libs/datatables/datatables.css')}}">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-mail bg-primary ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-primary">{{$count_projects}}</span> Projects</h4>
+                                        <h4 class="mt-2"><span class="text-primary">{{$count_projects}} Projects</span></h4>
                                         <p class="mb-3">Current Projects</p>
                                         <a href="/project" button class="btn btn-primary btn-sm btn-round">View</button></a>
                                     </div>
@@ -52,7 +52,7 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-twitter bg-success ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-success">{{$count_comments}}</span> Comments</h4>
+                                        <h4 class="mt-2"><span class="text-success">{{$count_comments}}  Comments</span></h4>
                                         <p class="mb-3">Customers Comments</p>
                                         <a href="/get-comments" button class="btn btn-success btn-sm btn-round">Check them out</button></a>
                                     </div>
@@ -62,8 +62,8 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-briefcase bg-danger ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-info">{{$get_materials}}</span> Materials</h4>
-                                        <p class="mb-3">Mumbers of materials</p>
+                                        <h4 class="mt-2"><span class="text-danger">{{$get_materials}}  Materials</span></h4>
+                                        <p class="mb-3">Number of materials</p>
                                         <a href="/get-material" button class="btn btn-danger btn-sm btn-round">View</button></a>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="card  mb-4">
                                     <div class="card-body text-center">
                                         <i class="feather icon-shopping-cart bg-warning ui-rounded-icon"></i>
-                                        <h4 class="mt-2"><span class="text-warning">{{$get_messages}}</span> Contacts</h4>
+                                        <h4 class="mt-2"><span class="text-warning">{{$get_messages}} Contacts</span></h4>
                                         <p class="mb-3">Messages Received</p>
                                         <a href="/contact-messages" button class="btn btn-warning btn-sm btn-round text-white">View</button></a>
                                     </div>
@@ -80,92 +80,52 @@
                             </div>
                             <!-- Staustic card 8 end -->
                             <!-- Chart card 11 Start -->
-                            <div class="col-xl-8 col-md-12">
-                                <div class="card mb-4">
-                                    <div class="card-header with-elements">
-                                        <h6 class="card-header-title mb-0">Statistics</h6>
-                                        <div class="card-header-elements ml-auto">
-                                            <label class="text m-0">
-                                                <span class="text-light text-tiny font-weight-semibold align-middle">
-                                                  SHOW STATS
-                                                </span>
-                                                <span class="switcher switcher-sm d-inline-block align-middle mr-0 ml-2">
-                                                  <input type="checkbox" class="switcher-input" checked>
-                                                  <span class="switcher-indicator">
-                                                    <span class="switcher-yes"></span>
-                                                <span class="switcher-no"></span>
-                                                </span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="row no-gutters row-bordered">
-                                        <div class="col-md-8 col-lg-12 col-xl-8">
-                                            <div class="card-body">
-                                                <div id="line-moris" class="moris-line-shadow" style="height:210px"></div>
+                            <div class="col-xl-12 col-md-12">
+                            <div class="card">
+                                    <div class="card-body">
+                                        <div class="row align-items-center m-l-0">
+                                            <div class="col-sm-6">
+                                              <span style="color:green;">Total Amount of Projects: Sh. {{ number_format($get_amount)}}</span>
+                                            </div>
+                                            <div class="col-sm-6 text-right">
+                                                <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#projects"><i class="feather icon-plus"></i> Add Project</button>
+                                                
                                             </div>
                                         </div>
-
-                                        <div class="col-md-4 col-lg-12 col-xl-4">
-                                            <div class="card-body">
-                                                <!-- Numbers -->
-                                                <div class="row">
-                                                    <div class="col-6 col-xl-5 text-muted mb-3">Total sales</div>
-                                                    <div class="col-6 col-xl-7 mb-3">
-                                                        <span class="text-big">10,332</span>
-                                                        <sup class="text-success">+12%</sup>
-                                                    </div>
-                                                    <div class="col-6 col-xl-5 text-muted mb-3">Income amount</div>
-                                                    <div class="col-6 col-xl-7 mb-3">
-                                                        <span class="text-big">$1,534</span>
-                                                        <sup class="text-danger">-5%</sup>
-                                                    </div>
-                                                    <div class="col-6 col-xl-5 text-muted mb-3">Total budget</div>
-                                                    <div class="col-6 col-xl-7 mb-3">
-                                                        <span class="text-big">$10,534</span>
-                                                        <sup class="text-success">+12%</sup>
-                                                    </div>
-                                                    <div class="col-6 col-xl-5 text-muted mb-3">Page views</div>
-                                                    <div class="col-6 col-xl-7 mb-3">
-                                                        <span class="text-big">21,332</span>
-                                                        <sup class="text-danger">-12%</sup>
-                                                    </div>
-                                                    <div class="col-6 col-xl-5 text-muted mb-3">Completed tasks</div>
-                                                    <div class="col-6 col-xl-7 mb-3">
-                                                        <span class="text-big">12</span>
-                                                        <sup class="text-success">+12%</sup>
-                                                    </div>
-                                                </div>
-                                                <!-- / Numbers -->
-                                            </div>
+                                        <div class="table-responsive">
+                                            <table id="report-table" class="table table-bordered table-striped mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Title</th>
+                                                        <th>Organization</th>
+                                                        <th>Amount</th>
+                                                        <th>Deadline</th>
+                                                        <th>Location</th>
+                                                        <th>Head of Project</th>
+                                                        <th>Options</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($get_projects as $i => $project)
+                                                    <tr>
+                                                        <td>{{$i + 1}}</td>
+                                                        <td>{{$project->title}}</td>
+                                                        <td>{{$project->organization}}</td>
+                                                        <td>{{ number_format($project->amount)}}</td>
+                                                        <td>{{$project->deadline}}</td>
+                                                        <td>{{$project->location}}</td>
+                                                        <td>{{$project->head_of_project}}</td>
+                                                        <td>
+                                                            <a href="/edit-dashboard-project/{{$project->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                                            <a href="/delete-dashboard-project/{{$project->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-12">
-                                <div class="card mb-4">
-                                    <div class="card-body pb-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="lnr lnr-earth display-4 text-success"></div>
-                                            <div class="ml-3">
-                                                <div class="text-muted small">Monthly visits</div>
-                                                <div class="text-large">687,123</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ecom-chart-2" class="mt-3 chart-shadow-success" style="height:74px"></div>
-                                </div>
-                                <div class="card mb-4">
-                                    <div class="card-body pb-0">
-                                        <div class="d-flex align-items-center">
-                                            <div class="lnr lnr-users display-4 text-warning"></div>
-                                            <div class="ml-3">
-                                                <div class="text-muted small">Users</div>
-                                                <div class="text-large">105,652</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ecom-chart-4" class="mt-3 chart-shadow-warning" style="height:74px"></div>
                                 </div>
                             </div>
                             <!-- Chart card 11 end -->
@@ -192,6 +152,70 @@
 
     <!-- Core scripts -->
     @include('layouts.javascript')
+    <script src="{{ asset('admin/assets/libs/datatables/datatables.js')}}"></script>
+    
+    <script>
+        // DataTable start
+        $('#report-table').DataTable();
+        // DataTable end
+    </script>
+    <div class="modal fade" id="projects" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="get" action="/save-project">
+                    @csrf
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="Title">Title</label>
+                                    <input type="text" name="title" class="form-control" id="Title" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="amount">Amount</label>
+                                    <input class="form-control" name="amount" id="amount" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="location">Location</label>
+                                    <input class="form-control" name="location" id="location" rows="3" required>                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="Organization">Organisation</label>
+                                    <input class="form-control" name="organization" id="organization" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group fill">
+                                    <label class="floating-label" for="deadline">Deadline</label>
+                                    <input type="date" class="form-control" name="deadline" id="deadline" placeholder="date" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group fill">
+                                    <label class="floating-label" for="head_of_project">Head of Project</label>
+                                    <input type="text" class="form-control" name="head_of_project" id="head_of_project" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
