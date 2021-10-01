@@ -6,8 +6,8 @@
             @include('layouts.messages')
             <form action="/comment" method="get" class="comment-form">
                 @csrf
-                <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
-                <p class="comment-form-comment"><label for="comment">Comment</label> <textarea type="text" id="comment" name="comment" cols="45" rows="4" maxlength="65525" required="required"></textarea></p>
+                <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span></p>
+                <p class="comment-form-comment"><label for="comment">Comment</label> <textarea type="text" id="comment" name="comment" cols="20" rows="2" maxlength="65525" required="required"></textarea></p>
                 <p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="name" name="name" type="text" value="" size="30" maxlength="245" required='required' /></p>
                 <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
                 <p class="comment-form-url"><label for="url">District</label> <input id="location" name="location" type="text" value="" size="30" maxlength="200" /></p>

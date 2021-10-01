@@ -27,7 +27,8 @@ class ProjectsController extends Controller
      * This function gets projects for this month
     */
     protected function getProjectsThisMonth(){
-        $get_projects_for_this_month=DB::table('projects')->whereMonth('created_at', '09')
+       
+        $get_projects_for_this_month=DB::table('projects')->whereMonth('created_at',date('m'))->orderBy('created_at')
         ->get();
         return view('pages.monthly-projects', compact('get_projects_for_this_month'));
     }
